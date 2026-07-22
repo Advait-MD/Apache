@@ -27,11 +27,11 @@ impl eframe::App for ApacheApp {
        
         
         let target_x = x as f32 + 0.15;
-        let target_y = y as f32 - 0.15;
+        let target_y = y as f32 - 0.15; //hud offset
 
 
-        self.hud_x += (target_x - self.hud_x) * 1.0;
-        self.hud_y += (target_y - self.hud_y) * 1.0;         
+        self.hud_x += (target_x - self.hud_x) * 0.15; //interpolation via x
+        self.hud_y += (target_y - self.hud_y) * 0.15; //interpolation via y        
      
             ctx.send_viewport_cmd(
                    egui::ViewportCommand::OuterPosition(
