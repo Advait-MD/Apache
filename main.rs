@@ -11,6 +11,7 @@ fn main() -> eframe::Result {
             .with_title("Apache")
             .with_inner_size([120.0, 60.0])
             .with_decorations(false)
+            .with_transparent(true)
             .with_resizable(false),
         ..Default::default()
     };
