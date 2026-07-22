@@ -10,7 +10,7 @@ fn main() -> eframe::Result {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_title("Apache")
-            .with_inner_size([120.0, 60.0])
+            .with_inner_size([30.0, 15.0])
             .with_decorations(false)
             .with_transparent(true)
             .with_resizable(false),

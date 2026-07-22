@@ -26,13 +26,14 @@ impl eframe::App for ApacheApp {
     if let Some((x, y)) = crate::platform::cursor::position() {    
        
         
-        let target_x = x as f32 + 1.0;
-        let target_y = y as f32 - 1.0;
+        let target_x = x as f32 + 0.15;
+        let target_y = y as f32 - 0.15;
 
-        self.hud_x += (target_x - self.hud_x) * 0.15;
-        self.hud_y += (target_y - self.hud_y) * 0.15; 
-        
-         ctx.send_viewport_cmd(
+
+        self.hud_x += (target_x - self.hud_x) * 1.0;
+        self.hud_y += (target_y - self.hud_y) * 1.0;         
+     
+            ctx.send_viewport_cmd(
                    egui::ViewportCommand::OuterPosition(
                        egui::pos2(self.hud_x, self.hud_y),
             ),
