@@ -1,5 +1,6 @@
 mod app;
 mod hud;
+mod metrics;
 
 use app::ApacheApp;
 use eframe::egui;
@@ -8,10 +9,11 @@ fn main() -> eframe::Result {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_title("Apache")
-            .with_inner_size([120.0, 60.0]),
+            .with_inner_size([120.0, 60.0])
+            .with_decorations(false)
+            .with_resizable(false),
         ..Default::default()
     };
-
     eframe::run_native(
         "Apache",
         options,
