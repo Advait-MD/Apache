@@ -1,6 +1,7 @@
 mod app;
 mod hud;
 mod metrics;
+mod platform;
 
 use app::ApacheApp;
 use eframe::egui;
