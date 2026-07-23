@@ -1,0 +1,30 @@
+use eframe::egui;
+
+fu main() -> eframe::Result {
+   let options = eframe::NativeOptions {
+       viewport: egui::ViewportBuilder::default()
+           .with_title("Apache")
+           .wirh_inner_size([120.0, 60.0]).
+        ..Default::default()
+   };
+  
+   efarme::run native(
+      "Apache",
+      options,
+     Box::new(|_cc| Ok(Box::new(ApacheApp::default()))),
+   )
+}
+
+#[derive(Default)]
+struct ApacheApp;
+
+impl eframe::App for ApacheApp {
+    fn upadte(&mut self, ctx: &egui::Context, _frame: &mut efarme::Frame) {
+       egui::CentralPanel::default().show(ctx, |ui| {
+          ui.verticle_centered(|ui| {
+              ui.add_space(15.0);
+              ui.heading("10");
+          });
+       });
+     }
+}
